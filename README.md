@@ -1,409 +1,361 @@
-# State-of-the-Art Shitcode Principles
+# 大便程式碼原則 State-of-the-Art Shitcode Principles
 
 [![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
 
-This a list of state-of-the-art shitcode principles your project should follow to call it a proper shitcode.
+這是業界最先進的大便程式碼原則，你應該符合這些準則，才能算是完美的大便程式碼。
 
-_Read this in other languages:_
-[_简体中文_](README.zh-CN.md),
-[_한국어_](README.ko-KR.md)
+# 0.取得時髦的勳章
 
-## Get Your Badge
-
-If your repository follows the state-of-the-art shitcode principles you may use the following "state-of-the-art shitcode" badge:
+如果你的專案有完整遵照大便程式碼原則，那你就可以使用 "state-of-the-art shitcode" 徽章。
 
 [![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
 
-Markdown source-code for the badge:
+# 💩1. 使用容易混淆的變數名稱
 
-```
-[![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
-```
+> 少打一點字，多點時間思考。
 
-## The Principles
+Good 👍🏻
 
-### 💩 Name variables in a way as if your code was already obfuscated
-
-Fewer keystrokes, more time for you.
-
-_Good 👍🏻_
-
-```javascript
-let a = 42;
+```python
+a = 42
 ```
 
-_Bad 👎🏻_
+Bad 👎🏻
 
-```javascript
-let age = 42;
+```python
+age = 43
 ```
 
-### 💩 Mix variable/functions naming style
+# 💩2. 使用不同命名風格
 
-Celebrate the difference.
+> 為「不同」慶祝！
 
-_Good 👍🏻_
+Good 👍🏻
 
-```javascript
-let wWidth = 640;
-let w_height = 480;
+```python
+wWidth = 640
+h_height = 480
 ```
 
-_Bad 👎🏻_
+Bad 👎🏻
 
-```javascript
-let windowWidth = 640;
-let windowHeight = 480;
+```python
+window_width = 640
+windows_height = 480
 ```
 
-### 💩 Never write comments
+# 💩3. 永遠，永遠，永遠都不要下註解
 
-No one is going to read your code anyway.
+> 不要讓任何人讀懂你的程式碼。
 
-_Good 👍🏻_
+Good 👍🏻
 
-```javascript
-const cdr = 700;
+```python
+cloth = list(input())
 ```
 
-_Bad 👎🏻_
+Bad 👎🏻
 
-More often comments should contain some 'why' and not some 'what'. If the 'what' is not clear in the code, the code is probably too messy.
+你的註解中，應該要說「為什麼」而不是單純的「做什麼」，要讓別人可以理解這行程式碼背後的邏輯。
 
-```javascript
-// The number of 700ms has been calculated empirically based on UX A/B test results.
-// @see: <link to experiment or to related JIRA task or to something that explains number 700 in details>
-const callbackDebounceRate = 700;
+```python
+# Cause str can't assign value with specific index, but list can do.
+cloth = list(input())
 ```
 
-### 💩 Always write comments in your native language
+# 💩4. 永遠都要用你的母語去下註解
 
-If you violated the "No comments" principle then at least try to write comments in a language that is different from the language you use to write the code. If your native language is English you may violate this principle.
+> 如果你違反了前面的「不要下註解」原則，至少你還可以試試看這個。在寫註解時盡量使用自己的母語或是熟悉的語言，不要使用英文去寫，自己看得懂比較重要。
 
-_Good 👍🏻_
+Good 👍🏻
 
-```javascript
-// Закриваємо модальне віконечко при виникненні помилки.
-toggleModal(false);
+```python
+# 如果發生 Error 時，就隱藏 modal。
+toggle_modal(False)
 ```
 
-_Bad 👎🏻_
+Bad 👎🏻
 
-```javascript
-// Hide modal window on error.
-toggleModal(false);
+```python
+# Hide modal window on error.
+toggle_modal(False)
 ```
 
-### 💩 Try to mix formatting style as much as possible
+# 💩5. 盡可能的使用各種的格式化風格
 
-Celebrate the difference.
+> 跟別人不一樣，就是你獨特魅力！
 
-_Good 👍🏻_
+Good 👍🏻
 
-```javascript
-let i = ['tomato', 'onion', 'mushrooms'];
-let d = [ "ketchup", "mayonnaise" ];
+```python
+i = ['tomato', 'onion', 'mushrooms']
+d = [ "ketchup", "mayonnaise" ]
 ```
 
-_Bad 👎🏻_
+Bad 👎🏻
 
-```javascript
-let ingredients = ['tomato', 'onion', 'mushrooms'];
-let dressings = ['ketchup', 'mayonnaise'];
+```python
+i = ["tomato", "onion", "mushrooms"]
+d = ["ketchup", "mayonnaise"]
 ```
 
-### 💩 Put as much code as possible into one line
+# 💩6. 盡可能的把程式寫在同一行。
 
-_Good 👍🏻_
+Good 👍🏻
 
-```javascript
-document.location.search.replace(/(^\?)/,'').split('&').reduce(function(o,n){n=n.split('=');o[n[0]]=n[1];return o},{})
+```python
+leap_year = [i for i in list(map(int(i) + 1911, input().split(", "))) if i % 4 == 0 and i % 100 != 0 or year % 400 == 0]
 ```
 
-_Bad 👎🏻_
+Bad 👎🏻
 
-```javascript
-document.location.search
-  .replace(/(^\?)/, '')
-  .split('&')
-  .reduce((searchParams, keyValuePair) => {
-    keyValuePair = keyValuePair.split('=');
-    searchParams[keyValuePair[0]] = keyValuePair[1];
-    return searchParams;
-  },
-  {}
-)
-```
-
-### 💩 Fail silently
-
-Whenever you catch an error it is not necessary for anyone to know about it. No logs, no error modals, chill.
-
-_Good 👍🏻_
-
-```javascript
-try {
-  // Something unpredictable.
-} catch (error) {
-  // tss... 🤫
-}
-```
-
-_Bad 👎🏻_
-
-```javascript
-try {
-  // Something unpredictable.
-} catch (error) {
-  setErrorMessage(error.message);
-  // and/or
-  logError(error);
-}
-```
-
-### 💩 Use global variables extensively
-
-Globalization principle.
-
-_Good 👍🏻_
-
-```javascript
-let x = 5;
-
-function square() {
-  x = x ** 2;
-}
-
-square(); // Now x is 25.
-```
-
-_Bad 👎🏻_
-
-```javascript
-let x = 5;
-
-function square(num) {
-  return num ** 2;
-}
-
-x = square(x); // Now x is 25.
-```
-
-### 💩 Create variables that you're not going to use.
-
-Just in case.
-
-_Good 👍🏻_
-
-```javascript
-function sum(a, b, c) {
-  const timeout = 1300;
-  const result = a + b;
-  return a + b;
-}
-```
-
-_Bad 👎🏻_
-
-```javascript
-function sum(a, b) {
-  return a + b;
-}
-```
-
-### 💩 Don't specify types and/or don't do type checks if language allows you to do so.
-
-_Good 👍🏻_
-
-```javascript
-function sum(a, b) {
-  return a + b;
-}
-
-// Having untyped fun here.
-const guessWhat = sum([], {}); // -> "[object Object]"
-const guessWhatAgain = sum({}, []); // -> 0
-```
-
-_Bad 👎🏻_
-
-```javascript
-function sum(a: number, b: number): ?number {
-  // Covering the case when we don't do transpilation and/or Flow type checks in JS.
-  if (typeof a !== 'number' && typeof b !== 'number') {
-    return undefined;
-  }
-  return a + b;
-}
-
-// This one should fail during the transpilation/compilation.
-const guessWhat = sum([], {}); // -> undefined
-```
-
-### 💩 You need to have an unreachable piece of code
-
-This is your "Plan B".
-
-_Good 👍🏻_
-
-```javascript
-function square(num) {
-  if (typeof num === 'undefined') {
-    return undefined;
-  }
-  else {
-    return num ** 2;
-  }
-  return null; // This is my "Plan B".
-}
-```
-
-_Bad 👎🏻_
-
-```javascript
-function square(num) {
-  if (typeof num === 'undefined') {
-    return undefined;
-  }
-  return num ** 2;
-}
-```
-
-### 💩 Triangle principle
-
-Be like a bird - nest, nest, nest.
-
-_Good 👍🏻_
-
-```javascript
-function someFunction() {
-  if (condition1) {
-    if (condition2) {
-      asyncFunction(params, (result) => {
-        if (result) {
-          for (;;) {
-            if (condition3) {
-            }
-          }
-        }
-      })
-    }
-  }
-}
-```
-
-_Bad 👎🏻_
-
-```javascript
-async function someFunction() {
-  if (!condition1 || !condition2) {
-    return;
-  }
-  
-  const result = await asyncFunction(params);
-  if (!result) {
-    return;
-  }
-  
-  for (;;) {
-    if (condition3) {
-    }
-  }
-}
-```
-
-### 💩 Mess with indentations
-
-Avoid indentations since they make complex code take up more space in the editor. If you're not feeling like avoiding them then just mess with them.
-
-_Good 👍🏻_
-
-```javascript
-const fruits = ['apple',
-  'orange', 'grape', 'pineapple'];
-  const toppings = ['syrup', 'cream', 
-                    'jam', 
-                    'chocolate'];
-const desserts = [];
-fruits.forEach(fruit => {
-toppings.forEach(topping => {
-    desserts.push([
-fruit,topping]);
-    });})
-```
-
-_Bad 👎🏻_
-
-```javascript
-const fruits = ['apple', 'orange', 'grape', 'pineapple'];
-const toppings = ['syrup', 'cream', 'jam', 'chocolate'];
-const desserts = [];
-
-fruits.forEach(fruit => {
-  toppings.forEach(topping => {
-    desserts.push([fruit, topping]); 
-  });
-})
-```
-
-### 💩 Do not lock your dependencies
-
-Update your dependencies on each new installation in uncontrolled way. Why stick to the past, let's use the cutting edge libraries versions.
-
-_Good 👍🏻_
+```python
+year = list(map(int(i) + 1911, input().split(", ")))
+leap_year = list()
+for i in year:
+	if (i % 4 == 0 and i % 100 != 0) or year % 400 == 0:
+		leap_year.append(i)
 
 ```
-$ ls -la
 
-package.json
+# 💩7. 噓！不要讓別人發現錯誤
+
+> 不管怎樣，發生錯誤時沒有必要讓所有人都知道。沒有日誌檔、沒有錯誤提示，讚啦。
+
+Good 👍🏻
+
+```python
+try:
+	...
+except:
+	...
+finally:
+	...
 ```
 
-_Bad 👎🏻_
+Bad 👎🏻
 
-```
-$ ls -la
-
-package.json
-package-lock.json
-```
-
-### 💩 Always name your boolean value a `flag`
-
-Leave the space for your colleagues to think what the boolean value means.
-
-_Good 👍🏻_
-
-```javascript
-let flag = true;
+```python
+try:
+	...
+except NameError as NE:
+	print("Name is not defined!")
+	print(NE)
+finally:
+	...
 ```
 
-_Bad 👎🏻_
+# 💩8. 廣泛的使用全域變數
 
-```javascript
-let isDone = false;
-let isEmpty = false;
+> 全域變數超好用，函式不用一直傳參數，方便多了。
+
+Good 👍🏻
+
+```python
+x = [5, 3]
+def square():
+	x[0] = x[0] ** 2
+
+square() # Now x is 25
 ```
 
-### 💩 Long-read functions are better than short ones.
+Bad 👎🏻
 
-Don't divide a program logic into readable pieces. What if your IDE's search breaks and you will not be able to find the necessary file or function?
+```python
+x = [5, 3]
+def square(num):
+	return num ** 2
 
-- 10000 lines of code in one file is OK.
-- 1000 lines of a function body is OK.
-- Dealing with many services (3rd party and internal, also, there are some helpers, database hand-written ORM and jQuery slider) in one `service.js`? It's OK.
+x[0] = square(x[0]) # Now x is 25
+```
 
-### 💩 Avoid covering your code with tests
+# 💩9. 宣告沒有要使用的變數
 
-This is a duplicate and unnecessary amount of work.
+> 以防萬一，說不定自己之後會用到。
 
-### 💩 As hard as you can try to avoid code linters
+Good 👍🏻
 
-Write code as you want, especially if there is more than one developer in a team. This is a "freedom" principle.
+```python
+def sum(a, b, c):
+	timeout = 1300
+	result = a + b
+	return result
+```
 
-### 💩 Start your project without a README file.
+Bad 👎🏻
 
-And keep it that way for the time being.
+```python
+def sum(a, b, c):
+	return a + b
+```
 
-### 💩 You need to have unnecessary code
+# 💩10. 不要使用型態提示
 
-Don't delete the code your app doesn't use. At most, comment it.
+Good 👍🏻
+
+```python
+def sum(a, b):
+  return a * b
+
+guess_what = sum("1", 5) # it work! but it's weird.
+guess_what_again = sum([0], "5"); # Error
+```
+
+Bad 👎🏻
+
+```python
+def sum(a: int, b: int): -> int:
+  if not isinstance(a, int) or not isinstance(b, int):
+    return None
+
+  return a * b
+
+guess_what = sum("1", 5); # return None
+```
+
+# 💩11. 就算程式碼不會執行，一樣要先保留
+
+> 永遠都要有的 B 計畫！
+
+Good 👍🏻
+
+```python
+def square(num):
+	if not isinstance(num, int):
+		return None
+	else:
+		return num ** 2
+
+	return None # 這就是你的B計畫！
+```
+
+Bad 👎🏻
+
+```python
+def square(num):
+	if not isinstance(num, int):
+		return None
+
+	return num ** 2
+```
+
+# 💩12. 金字塔萬歲
+
+> 寫程式要想翱翔在空中的鳥一樣，飛行隊伍要排好！
+
+Good 👍🏻
+
+```python
+def some_function():
+	if condition1:
+		if condition2:
+			for i in range(10):
+				print(i)
+
+```
+
+Bad 👎🏻
+
+```python
+def some_function():
+	if not condition1 or not condition2:
+		return None
+
+	for i in range(10):
+		print(i)
+```
+
+# 💩13. 縮排沒差啦
+
+Good 👍🏻
+
+```python
+fruits = ['apple',
+  'orange', 'grape', 'pineapple']
+toppings = ['syrup', 'cream',
+                    'jam',
+                    'chocolate']
+desserts = []
+for f in fruits:
+	for t in toppings:
+		desserts.append([f,
+				t]
+			)
+
+
+```
+
+Bad 👎🏻
+
+```python
+fruits = ['apple', 'orange', 'grape', 'pineapple']
+toppings = ['syrup', 'cream', 'jam', 'chocolate']
+desserts = []
+
+for f in fruits:
+	for t in toppings:
+		desserts.append([f, t])
+
+```
+
+# 💩14. 不需要控管套件資訊
+
+> 為什麼要鑽牛角尖，過去的就讓它過去吧，舊的不去新的不來。
+
+Good 👍🏻
+
+```bash
+$ ls
+
+requirements.txt
+```
+
+Bad 👎🏻
+
+```bash
+$ ls
+
+requirements.txt
+requirements-lock.txt
+```
+
+# 15. 布林值變數命名為 flag
+
+> 為什麼要鑽牛角尖，過去的就讓它過去吧。
+
+Good 👍🏻
+
+```python
+flag = True
+```
+
+Bad 👎🏻
+
+```python
+is_done = False
+is_empty = False
+```
+
+# 16. 函式內的程式碼越長越好
+
+> 不要將你的程式碼依照功能性去做拆分，假如哪天 IDE 的搜尋功能壞掉了，你該如找到那個重要的函式？
+
+- 一萬行程式碼在一個檔案內是可以的。
+- 一千行程式碼在一個函式內是可以的。
+- 所有的服務程式碼，不管是第三方套件提供的，或是自行撰寫的，就只要放在 servive.py 裡面就好，懂？
+
+# 17. 不要撰寫測試
+
+> 這是一個不需要且無意義的工作。
+
+# 18. 不要使用 Linter
+
+> 你想怎麼寫程式就怎麼寫，電腦不能限制你的創意想法！
+
+# 19. 創立專案時，不需要創建 README 檔案
+
+> 幹嘛增加自己的工作量？打那麼多文件，又沒有人會認真看。
+
+# 20. 保留不必要的程式碼
+
+> 不要刪掉程式沒有使用到的程式碼，頂多就是註解該段程式碼而已。
