@@ -113,8 +113,8 @@ Bad 👎🏻
 year = list(map(int(i) + 1911, input().split(", ")))
 leap_year = list()
 for i in year:
-	if (i % 4 == 0 and i % 100 != 0) or year % 400 == 0:
-		leap_year.append(i)
+    if (i % 4 == 0 and i % 100 != 0) or year % 400 == 0:
+        leap_year.append(i)
 
 ```
 
@@ -126,23 +126,23 @@ Good 👍🏻
 
 ```python
 try:
-	...
+    ...
 except:
-	...
+    ...
 finally:
-	...
+    ...
 ```
 
 Bad 👎🏻
 
 ```python
 try:
-	...
+    ...
 except NameError as NE:
-	print("Name is not defined!")
-	print(NE)
+    print("Name is not defined!")
+    print(NE)
 finally:
-	...
+    ...
 ```
 
 # 💩8. 廣泛的使用全域變數
@@ -154,7 +154,7 @@ Good 👍🏻
 ```python
 x = [5, 3]
 def square():
-	x[0] = x[0] ** 2
+    x[0] = x[0] ** 2
 
 square() # Now x is 25
 ```
@@ -164,7 +164,7 @@ Bad 👎🏻
 ```python
 x = [5, 3]
 def square(num):
-	return num ** 2
+    return num ** 2
 
 x[0] = square(x[0]) # Now x is 25
 ```
@@ -177,16 +177,16 @@ Good 👍🏻
 
 ```python
 def sum(a, b, c):
-	timeout = 1300
-	result = a + b
-	return result
+    timeout = 1300
+    result = a + b
+    return result
 ```
 
 Bad 👎🏻
 
 ```python
 def sum(a, b, c):
-	return a + b
+    return a + b
 ```
 
 # 💩10. 不要使用型態提示
@@ -195,7 +195,7 @@ Good 👍🏻
 
 ```python
 def sum(a, b):
-  return a * b
+    return a * b
 
 guess_what = sum("1", 5) # it work! but it's weird.
 guess_what_again = sum([0], "5"); # Error
@@ -205,10 +205,10 @@ Bad 👎🏻
 
 ```python
 def sum(a: int, b: int): -> int:
-  if not isinstance(a, int) or not isinstance(b, int):
-    return None
+    if not isinstance(a, int) or not isinstance(b, int):
+        return None
 
-  return a * b
+    return a * b
 
 guess_what = sum("1", 5); # return None
 ```
@@ -221,22 +221,22 @@ Good 👍🏻
 
 ```python
 def square(num):
-	if not isinstance(num, int):
-		return None
-	else:
-		return num ** 2
+    if not isinstance(num, int):
+        return None
+    else:
+        return num ** 2
 
-	return None # 這就是你的B計畫！
+    return None # 這就是你的B計畫！
 ```
 
 Bad 👎🏻
 
 ```python
 def square(num):
-	if not isinstance(num, int):
-		return None
+    if not isinstance(num, int):
+        return None
 
-	return num ** 2
+    return num ** 2
 ```
 
 # 💩12. 金字塔萬歲
@@ -247,10 +247,10 @@ Good 👍🏻
 
 ```python
 def some_function():
-	if condition1:
-		if condition2:
-			for i in range(10):
-				print(i)
+    if condition1:
+        if condition2:
+            for i in range(10):
+                print(i)
 
 ```
 
@@ -258,11 +258,11 @@ Bad 👎🏻
 
 ```python
 def some_function():
-	if not condition1 or not condition2:
-		return None
+    if not condition1 or not condition2:
+        return None
 
-	for i in range(10):
-		print(i)
+    for i in range(10):
+        print(i)
 ```
 
 # 💩13. 縮排沒差啦
@@ -277,10 +277,10 @@ toppings = ['syrup', 'cream',
                     'chocolate']
 desserts = []
 for f in fruits:
-	for t in toppings:
-		desserts.append([f,
-				t]
-			)
+    for t in toppings:
+        desserts.append([f,
+            t]
+        )
 
 
 ```
@@ -293,8 +293,8 @@ toppings = ['syrup', 'cream', 'jam', 'chocolate']
 desserts = []
 
 for f in fruits:
-	for t in toppings:
-		desserts.append([f, t])
+    for t in toppings:
+        desserts.append([f, t])
 
 ```
 
@@ -321,8 +321,6 @@ requirements-lock.txt
 
 # 15. 布林值變數命名為 flag
 
-> 為什麼要鑽牛角尖，過去的就讓它過去吧。
-
 Good 👍🏻
 
 ```python
@@ -342,7 +340,7 @@ is_empty = False
 
 - 一萬行程式碼在一個檔案內是可以的。
 - 一千行程式碼在一個函式內是可以的。
-- 所有的服務程式碼，不管是第三方套件提供的，或是自行撰寫的，就只要放在 servive.py 裡面就好，懂？
+- 所有有關於服務的程式碼，不管是第三方套件提供的，或是自行撰寫的，就只要放在 servive.py 裡面就好，懂？
 
 # 17. 不要撰寫測試
 
